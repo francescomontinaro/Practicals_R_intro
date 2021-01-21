@@ -1,6 +1,5 @@
-#Practicals R Intro
+## Practicals R Intro
 
-#21st Jan 2021
 
 This is the very first draft of a 2.5h practicals aiming to introduce R to Bachelor students.
 

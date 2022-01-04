@@ -64,8 +64,8 @@ knitr::opts_chunk$set(echo = FALSE)
 <br>
 <br>
 
-```{r, echo=FALSE, fig.align='right', fig.margin=T}
-knitr::include_graphics("./img/R_logo.svg.png",dpi=700)
+```{r, echo=FALSE, fig.align='right', fig.margin=T,out.width = 100, out.height = 100}
+knitr::include_graphics("./img/R_logo.svg.png",dpi=200)
 ```
 
 ## Why R?
@@ -97,7 +97,7 @@ Rstudio can be downloaded [here](https://rstudio.com/).
 
 ## Rstudio: First steps
 
-```{r, echo=FALSE, fig.align='center', fig.margin=T}
+```{r, echo=FALSE, fig.align='center', fig.margin=T,out.height="100%",out.width="100%"}
 knitr::include_graphics("./img/Rstudio.png",dpi=1400)
 ```
 
@@ -108,6 +108,7 @@ knitr::include_graphics("./img/Rstudio.png",dpi=1400)
 - Create a folder with name "esercitazione"
 - Click Open and confirm
 - Copy the file "gene_expression_data.txt" in the folder "esercitazione"
+
 ## Rstudio: Set the working directory
 
 - Go to File --> New File --> R script

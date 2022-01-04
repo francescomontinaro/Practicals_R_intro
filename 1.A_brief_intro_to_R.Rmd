@@ -15,7 +15,7 @@ incremental: yes
 body p {
 display: block;
   color: #36383b;
-  font-size: 10px;
+  font-size: 20px;
 }
 ul {
   display: block;
@@ -252,7 +252,7 @@ object_size(as.factor(sexes))
 
 ## Working on vectors
 
-In R, objects cab be modified in many ways:
+In R, objects can be modified in many ways:
 
 let's create two vectors:
 
@@ -455,7 +455,8 @@ lines(x,y,col="red") #add a red line
 ## Data visualization : histogram
 
 ```{r, echo=T, include=T,message=T}
-x <- rnorm(1000,mean=10) # create a vector from 1 to 10
+x <- rnorm(1000,mean=10) # create random normal 
+                         # distribution of 1,000 samples with mean=10
 
 hist(x)
 
@@ -512,7 +513,8 @@ m[,1] # extract the first column
 ## Matrices: data extraction
 
 ```{r, echo=T, include=T,message=T}
-m[2:3,c(5,6,9)] # extract the values of the 2nd and third row in the 5th, 6th and 9th column 
+m[2:3,c(5,6,9)] # extract the values of the 2nd and third row 
+                # in the 5th, 6th and 9th column 
 m[6,7] # extract the value of the 6th row and senth column
 ```
 
@@ -520,7 +522,8 @@ m[6,7] # extract the value of the 6th row and senth column
 An important R class is *dataframe*, which is characterised by high flexibility. In fact despite *matrices*, dataframes can contain multiple types of data  
 
 ```{r, echo=T, include=T,message=T}
-gene <-  c("ADGRB2", "TARBP1", "SLC22A24", "SLC15A5", "LOC117975386", "C17H17orf99", "TJP3", "TRIB3")
+gene <-  c("ADGRB2", "TARBP1", "SLC22A24", "SLC15A5", 
+           "LOC117975386", "C17H17orf99", "TJP3", "TRIB3")
 expression_in_cases <-c(100, 30, 35, 66,90, 200,12,8) 
 expression_in_controls <-c(10, 45, 55, 70,110, 80,25,85) 
 ```
@@ -662,7 +665,7 @@ df$V2
 
 We are now ready to work on a real problem. 
 
-Let's assume you got 1000 euros to do a pilot study on the genetic basis of drug addition.
+Let's assume you got 1000 euros to do a pilot study on the genetic basis of drug addiction.
 
 I want to be quick and efficient, and I need to prioritise my research towards genes that are ACTUALLY relate to drug addiction.
 
@@ -742,24 +745,34 @@ Brain - Hypothalamus
 ```{r, echo=T, include=T,message=T,fig.height=3.5}
 barplot(gene_expression$`Brain - Hypothalamus`,
         names.arg = gene_expression$Description,las=2, 
-        col="red",cex.names = .8,ylab="transcript per million")
+        col="purple",cex.names = .8,ylab="transcript per million")
 ```
 
 ## R: Wrap it all- Which gene is a good candidate to study?
-```{r, echo=T, include=F,message=T,fig.height=3.5}
+
+<br>
+<br>
+```{r, echo=T,results='hide', include=T,message=F,fig.height=3.5}
 par(mfrow=c(2,2),mar=c(6,2.5,1.5,1))
 
 barplot(gene_expression$`Brain - Cerebellum`,
-        names.arg = gene_expression$Description,las=2, col="blue",main="Cerebellum")
+        names.arg = gene_expression$Description,las=2, 
+        col="blue",main="Cerebellum")
 barplot(gene_expression$`Brain - Cortex`,
-        names.arg = gene_expression$Description,las=2, col="green",main="Cortex")
+        names.arg = gene_expression$Description,las=2, 
+        col="green",main="Cortex")
 barplot(gene_expression$`Brain - Hippocampus`,
-        names.arg = gene_expression$Description,las=2, col="brown",main="Hippocampus")
+        names.arg = gene_expression$Description,las=2, 
+        col="brown",main="Hippocampus")
 barplot(gene_expression$`Brain - Hypothalamus`,
-        names.arg = gene_expression$Description,las=2, col="purple",main="Hypotalamus")
+        names.arg = gene_expression$Description,las=2, 
+        col="purple",main="Hypotalamus")
 ```
 
+
+
 ## R: Wrap it all- Which gene is a good candidate to study?
+
 ```{r, echo=F, include=T,message=T,fig.height=3.5}
 par(mfrow=c(2,2),mar=c(6,2.5,1,1))
 

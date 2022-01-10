@@ -103,11 +103,12 @@ knitr::include_graphics("./img/Rstudio.png",dpi=1400)
 
 ## Rstudio: Set the working directory
 
+- Create a folder with name "esercitazione"
+- Copy the file "gene_expression_data.txt" in the folder "esercitazione"
 - Open Rstudio
 - Go to Session --> Set Working directory --> Choose Directory...
-- Create a folder with name "esercitazione"
 - Click Open and confirm
-- Copy the file "gene_expression_data.txt" in the folder "esercitazione"
+
 
 ## Rstudio: Set the working directory
 
@@ -126,16 +127,6 @@ knitr::include_graphics("./img/Rstudio.png",dpi=1400)
 99/12
 17*6
 ```
-
-## R operations:
-
-```{r, include=T,echo=T}
-75+4
-41-9
-99/12
-17*6
-```
-
 
 ## R operations:
 
@@ -242,7 +233,7 @@ levels(myBiologicalType)
 
 ## Classes: Factors
 
-Although it's not initially obvious, **factors** are very important. Consider, for example a vector of 100,000 entries summarizing the sex of a given species.
+Although it's not initially obvious, **factors** are very important. Consider, for example a vector of 100,000 entries summarizing the sex of indivuduals for a given species.
 ```{r, echo=T, include=T,message=FALSE}
 library(pryr)
 sexes <- sample(c("male","female"),size = 100000,replace = T)
@@ -329,8 +320,8 @@ When working with vectors it is possible to apply an operation to all the variab
 
 ```{r, echo=T, include=T,message=FALSE}
 vec2
-vec2*2 #show the full vector
-vec2+50 # show the third element
+vec2*2
+vec2+50
 ```
 
 ## Working on vectors: operations
@@ -514,8 +505,12 @@ m[,1] # extract the first column
 ## Matrices: data extraction
 
 ```{r, echo=T, include=T,message=T}
-m[2:3,c(5,6,9)] # extract the values of the 2nd and third row 
-                # in the 5th, 6th and 9th column 
+# extract the values of the 2nd and third row 
+# in the 5th, 6th and 9th column
+m[2:3,c(5,6,9)] 
+```
+
+```{r, echo=T, include=T,message=T}
 m[6,7] # extract the value of the 6th row and senth column
 ```
 
